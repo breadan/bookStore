@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import './config/connection.js';
 import bookRouter from './src/routes/book.route.js';
+import categoryRouter from './src/routes/category.route.js';
 
 const port = process.env.PORT || 7000;
 const mode = process.env.NODE_ENV;
@@ -15,6 +16,7 @@ app.use(express.json());
 
 //Routes
 app.use('/book', bookRouter);
+app.use('/category', categoryRouter);
 
 app.all('*', (req, res, next) => {
   return next(new Error(`page Not Found: ${req.url}`, { cause: 404 }));

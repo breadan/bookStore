@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, SchemaTypes } from 'mongoose';
 
 const bookSchema = new Schema(
   {
@@ -10,7 +10,7 @@ const bookSchema = new Schema(
       maxLength: 15,
     },
     description: {
-      type: Number,
+      type: String,
     },
     price: {
       type: Number,
@@ -22,7 +22,7 @@ const bookSchema = new Schema(
     stock: {
       type: Number,
     },
-    productId: { type: Schema.Types.ObjectId, ref: 'Category' },
+    productId: { type: SchemaTypes.ObjectId, ref: 'Category' },
   },
   { timestamps: true }
 );

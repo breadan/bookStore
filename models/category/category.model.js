@@ -10,7 +10,7 @@ const categorySchema = new Schema(
       maxLength: 15,
     },
     description: {
-      type: Number,
+      type: String,
     },
   },
   { timestamps: true }
